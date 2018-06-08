@@ -1,6 +1,6 @@
 import  Vue from 'vue';
 import App from './App';
-// const router=require('./router/index')1;
+// const router=require('./router/index')222;
 import router from './router/index'
 import ElementUI from 'element-ui';
 import axios from 'axios'
