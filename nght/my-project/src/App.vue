@@ -24,10 +24,6 @@
 
             }
         },
-        created(){
-            alert(1)
-          console.log(this.$router);
-        },
         components:{
             headerbar,
         },

@@ -71,8 +71,7 @@
         },
         created(){
             let login=this.isLogin;
-            console.log(Object.prototype.toString.call(login))
-            this.form.name=login;
+//            this.form.name=login;
             if(!login){
                 this.$router.push({ path: 'login', query: { plan: 'private' }})
             }

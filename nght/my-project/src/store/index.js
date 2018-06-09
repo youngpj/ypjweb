@@ -8,11 +8,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state:{
-        isLogin:false,
-        userData:{
-            userName:'',
-            passWord:''
-        },
+        return:{
+            isLogin:false,
+            userData:{
+                userName:'',
+                passWord:''
+            },
+        }
     },
     mutations: {
         changeLogin (state,data) {
@@ -20,7 +22,7 @@ export default new Vuex.Store({
                 localStorage.setItem('nguser',JSON.stringify({'login':true}));
                 state.isLogin=true;
             }else{
-                localStorage.setItem('nguser',JSON.stringify({'login':false}));
+                localStorage.removeItem('nguser');
                 state.isLogin=false;
             }
 

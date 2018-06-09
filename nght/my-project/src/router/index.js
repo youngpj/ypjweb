@@ -11,9 +11,12 @@ const router=new Router({
     routes:[
         {
             path:'/',
+            meta:{
+                isLogin:true
+            },
             components:{
-                body: resolve => require(['../components/home'], resolve),
-                footer: resolve => require(['../components/sidebar'], resolve)
+                body: resolve => require(['../components/home'], resolve)
+
             },
         },
         {
@@ -22,6 +25,9 @@ const router=new Router({
                 body: resolve => require(['../components/article'], resolve)
             },
             mame:'article1',
+            meta:{
+               isLogin:true
+            },
             children:[
                 {
                     path:'1',

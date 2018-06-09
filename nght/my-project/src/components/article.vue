@@ -198,14 +198,11 @@
                 this.handleCurrentChange(1)
             },
             handleCurrentChange(val) {
-                console.log(`当前页: ${val}`)
-                console.log(this.filterList.length,val)
                 this.totalpageNum=this.filterList.length;
                 this.pageList=this.filterList.slice((val-1)*this.onepageNum,(this.onepageNum*val)-1);
                 this.filterDate()
             },
             handleDelete(id,row){
-                console.log(id,row)
                 var _this=this;
                 this.$confirm('666', '确认删除', {
                     callback:function () {

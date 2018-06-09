@@ -23,7 +23,7 @@
             </el-submenu>
             <el-menu-item index="3"><router-link to="{name:'article1'}">广告管理</router-link></el-menu-item>
             <el-menu-item index="4"><router-link to="/article">文章管理</router-link></el-menu-item>
-            <el-button type="primary" plain @click="loginOut">退出12</el-button>
+            <el-button type="primary" plain @click="loginOut">退出</el-button>
         </el-menu>
     </div>
 </template>
@@ -42,6 +42,7 @@
             },
             loginOut(){
                 this.$store.commit('changeLogin','loginOut');
+                this.$router.push('/login');
             }
         }
     }

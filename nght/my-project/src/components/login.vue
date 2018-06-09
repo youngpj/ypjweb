@@ -30,6 +30,13 @@
         methods:{
             login:function () {
                 var _this=this;
+                if(_this.userInf.userName==''||_this.userInf.password==''){
+                    this.$message({
+                        message: '用户名密码不能为空',
+                        type: 'warning'
+                    });
+                    return;
+                }
                 this.$ajax.get('/api/logreg/getcode/',{
                     params: {
                         mobile: _this.userInf.userName,
@@ -45,7 +52,7 @@
                         this.$store.commit('changeLogin','login');
                         this.$router.push('/');
                         this.$message({
-                            message: res.data.return_msg,
+                            message: '登陆成功',
                             type: 'warning'
                         });
                     }
@@ -61,6 +68,10 @@
     }
 </script>
 <style lang="scss" scoped="" type="text/css">
+    body,html{
+        background:url(http://account.niaogebiji.com/images/ucenterBg.png) no-repeat;
+        background-size:100%;
+    }
     .login{
         height:500px;
         width:400px;
@@ -79,6 +90,7 @@
         -moz-box-shadow:0 0 20px rgba(0,0,0,.1);
         -webkit-box-shadow:0 0 20px rgba(0,0,0,.1);
         box-shadow:0 0 20px rgba(0,0,0,.1);
+
     }
     .el-form{
         width:90%;
