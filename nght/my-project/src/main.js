@@ -47,7 +47,7 @@ router.beforeEach((to, from,next) => {
         if(store.state.isLogin){
             next()
         }else{
-            Vue.prototype.$alert('先登录', '标题名称', {
+            Vue.prototype.$alert('先登录1', '标题名称', {
                 confirmButtonText: '确定',
                 callback: function(){
                     router.push({path:'/login'})
